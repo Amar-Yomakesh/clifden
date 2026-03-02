@@ -1,0 +1,9 @@
+{
+  "name": "clifden-beauty-laser-clinic",
+  "version": "1.0.0",
+  "description": "Clifden Beauty & Laser Clinic website",
+  "scripts": {
+    "start": "npx serve . --listen 3000 --no-clipboard",
+    "dev": "npx serve . --listen 3000"
+  }
+}

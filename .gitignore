@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Competitor reference files (not part of the deliverable)
+supersoftlaserclinic.co.uk_.*
+
+# Claude Code internals
+.claude/
+claude.md
+
+# OS / editor artefacts
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
+# Environment / secrets
+.env
+.env.*

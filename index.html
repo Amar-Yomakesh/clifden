@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clifden Beauty & Laser Clinic | Beauty That Never Ages</title>
+  <meta name="description" content="Advanced skin solutions and bespoke beauty treatments in Clifden, Co. Galway. Over 20 years of trusted expertise in laser hair removal, IPL, facials, and cosmetic injectables.">
+  <link rel="stylesheet" href="./fonts/fonts.css">
+
+  <style>
+    /* ========================
+       BRAND TOKENS
+    ======================== */
+    :root {
+      --cream:        #F9F5F0;
+      --warm-white:   #FDFAF7;
+      --gold:         #C9A96E;
+      --gold-light:   #E8D5B0;
+      --gold-dark:    #A07840;
+      --charcoal:     #2C2C2C;
+      --dark-brown:   #3D2B1F;
+      --medium-grey:  #7A7570;
+      --light-grey:   #E8E4DF;
+      --blush:        #F0E6E0;
+    }
+
+    /* ========================
+       RESET & BASE
+    ======================== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 62.5%; scroll-behavior: smooth; }
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--warm-white);
+      color: var(--charcoal);
+      font-weight: 300;
+      font-size: 1.5rem;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    button { font-family: 'Jost', sans-serif; }
+
+    /* ========================
+       UTILITIES
+    ======================== */
+    .section-label {
+      display: block;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 3.5vw, 4.4rem);
+      font-weight: 300;
+      color: var(--dark-brown);
+      line-height: 1.15;
+    }
+    .section-header { text-align: center; margin-bottom: 6rem; }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 1.4rem 3.6rem;
+      background: var(--dark-brown);
+      color: var(--cream);
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      border: 1px solid var(--dark-brown);
+      transition: background 0.25s, color 0.25s, border-color 0.25s;
+      cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--gold); border-color: var(--gold); color: var(--dark-brown); }
+
+    .btn-outline {
+      display: inline-block;
+      padding: 1.4rem 3.6rem;
+      background: transparent;
+      color: var(--cream);
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      border: 1px solid rgba(201,169,110,0.5);
+      transition: all 0.25s;
+      cursor: pointer;
+    }
+    .btn-outline:hover { background: var(--gold); border-color: var(--gold); color: var(--dark-brown); }
+
+    .btn-gold {
+      display: inline-block;
+      padding: 1.4rem 4rem;
+      background: var(--gold);
+      color: var(--dark-brown);
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      transition: all 0.25s;
+      cursor: pointer;
+    }
+    .btn-gold:hover { background: transparent; color: var(--gold); }
+
+    .btn-text {
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 0.3rem;
+      transition: color 0.2s;
+    }
+    .btn-text:hover { color: var(--gold-dark); }
+
+    /* ========================
+       TOP BAR
+    ======================== */
+    .top-bar {
+      background: var(--dark-brown);
+      padding: 1rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+    }
+    .top-bar a { color: var(--gold-light); font-weight: 300; transition: color 0.2s; }
+    .top-bar a:hover { color: var(--gold); }
+    .top-bar-sep { color: rgba(201,169,110,0.35); margin: 0 1.2rem; }
+    .top-bar-right { display: flex; align-items: center; }
+
+    /* ========================
+       NAVIGATION
+    ======================== */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 500;
+      background: var(--warm-white);
+      border-bottom: 1px solid var(--light-grey);
+    }
+    .nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 7.6rem;
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 400;
+      color: var(--dark-brown);
+      letter-spacing: 0.5px;
+      line-height: 1.2;
+    }
+    .nav-logo span {
+      display: block;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 0.2rem;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 3.2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 1.05rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold-dark); }
+    .nav-links .nav-book {
+      padding: 1rem 2.4rem;
+      background: var(--dark-brown);
+      color: var(--cream) !important;
+      border: 1px solid var(--dark-brown);
+      transition: background 0.25s, border-color 0.25s, color 0.25s !important;
+    }
+    .nav-links .nav-book:hover { background: var(--gold); border-color: var(--gold); color: var(--dark-brown) !important; }
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 0.5rem;
+      cursor: pointer;
+      padding: 0.4rem;
+      background: none;
+      border: none;
+      z-index: 600;
+    }
+    .nav-hamburger span { display: block; width: 2.4rem; height: 1px; background: var(--charcoal); transition: all 0.3s; }
+
+    /* ========================
+       HERO
+    ======================== */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 88vh;
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8rem 6rem 8rem 8rem;
+      background: var(--cream);
+    }
+    .hero-eyebrow {
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(4.2rem, 5.5vw, 7rem);
+      font-weight: 300;
+      color: var(--dark-brown);
+      line-height: 1.0;
+      letter-spacing: 1px;
+      margin-bottom: 2.4rem;
+    }
+    .hero-title em { font-style: italic; color: var(--gold-dark); }
+    .hero-desc {
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--medium-grey);
+      line-height: 1.85;
+      max-width: 44rem;
+      margin-bottom: 4rem;
+    }
+    .hero-actions { display: flex; align-items: center; gap: 3.2rem; flex-wrap: wrap; }
+    .hero-media {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(160deg, #5A3525 0%, #3D2B1F 50%, #1A0E08 100%);
+    }
+    .hero-media img { position: absolute; inset: 0; opacity: 0.75; }
+    .hero-media-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(249,245,240,0.08) 0%, transparent 100%);
+    }
+    .hero-badge {
+      position: absolute;
+      bottom: 4rem;
+      left: 4rem;
+      background: rgba(249,245,240,0.95);
+      padding: 2rem 2.4rem;
+      border-left: 3px solid var(--gold);
+      backdrop-filter: blur(4px);
+    }
+    .hero-badge-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.2rem;
+      font-weight: 300;
+      color: var(--dark-brown);
+      line-height: 1;
+    }
+    .hero-badge-text {
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--medium-grey);
+      margin-top: 0.4rem;
+    }
+
+    /* ========================
+       INTRO / ABOUT
+    ======================== */
+    .intro {
+      padding: 10rem 8rem;
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8rem;
+      align-items: center;
+    }
+    .intro-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 3.5vw, 4.4rem);
+      font-weight: 300;
+      color: var(--dark-brown);
+      line-height: 1.15;
+      margin-bottom: 2.4rem;
+    }
+    .intro-body {
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--medium-grey);
+      line-height: 1.85;
+      margin-bottom: 3.2rem;
+    }
+    .intro-stats {
+      display: flex;
+      gap: 4rem;
+      margin-bottom: 4rem;
+      padding: 2.8rem 0;
+      border-top: 1px solid var(--light-grey);
+      border-bottom: 1px solid var(--light-grey);
+    }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.6rem;
+      font-weight: 300;
+      color: var(--dark-brown);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--medium-grey);
+      margin-top: 0.4rem;
+    }
+    .intro-photo {
+      position: relative;
+      height: 58rem;
+      overflow: hidden;
+    }
+    .intro-photo img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .intro-photo-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, #C9A96E 0%, #8A6A40 50%, #3D2B1F 100%);
+    }
+    .intro-photo-accent {
+      position: absolute;
+      bottom: -2rem;
+      right: -2rem;
+      width: 18rem;
+      height: 18rem;
+      border: 2px solid var(--gold);
+      pointer-events: none;
+    }
+
+    /* ========================
+       SERVICE CATEGORIES
+    ======================== */
+    .categories-section {
+      background: var(--cream);
+      padding: 10rem 8rem;
+    }
+    .categories-inner { max-width: 1280px; margin: 0 auto; }
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .cat-card {
+      position: relative;
+      overflow: hidden;
+      height: 42rem;
+      cursor: pointer;
+    }
+    .cat-card-bg {
+      position: absolute;
+      inset: 0;
+      transition: transform 0.6s ease;
+    }
+    .cat-card:hover .cat-card-bg { transform: scale(1.06); }
+    .cat-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(30,15,8,0.88) 0%, rgba(30,15,8,0.3) 55%, transparent 100%);
+    }
+    .cat-card-body {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 3.2rem;
+    }
+    .cat-card-tag {
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+    .cat-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.15;
+      margin-bottom: 0.6rem;
+    }
+    .cat-card-from {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--gold-light);
+      letter-spacing: 0.5px;
+      margin-bottom: 1.6rem;
+    }
+    .cat-card-link {
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--cream);
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 0.2rem;
+      transition: color 0.2s;
+    }
+    .cat-card-link:hover { color: var(--gold); }
+
+    /* ========================
+       MARQUEE STRIP
+    ======================== */
+    .marquee-strip {
+      background: var(--gold);
+      padding: 1.6rem 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .marquee-track {
+      display: inline-flex;
+      animation: marquee 30s linear infinite;
+    }
+    .marquee-item {
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--dark-brown);
+      padding: 0 3.2rem;
+    }
+    .marquee-dot { color: rgba(61,43,31,0.4); }
+    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* ========================
+       CTA STRIP
+    ======================== */
+    .cta-strip {
+      background: var(--dark-brown);
+      padding: 10rem 8rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-strip::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 25% 50%, rgba(201,169,110,0.12) 0%, transparent 55%),
+        radial-gradient(ellipse at 75% 50%, rgba(201,169,110,0.07) 0%, transparent 50%);
+    }
+    .cta-strip-inner { position: relative; z-index: 1; max-width: 64rem; margin: 0 auto; }
+    .cta-strip-label {
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+    }
+    .cta-strip-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.2rem, 5vw, 5.6rem);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.1;
+      margin-bottom: 1.6rem;
+    }
+    .cta-strip-title em { font-style: italic; color: var(--gold); }
+    .cta-strip-desc {
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: rgba(249,245,240,0.55);
+      margin-bottom: 4rem;
+      line-height: 1.8;
+      letter-spacing: 0.3px;
+    }
+    .cta-strip-actions { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+
+    /* ========================
+       PRICING
+    ======================== */
+    .pricing-section {
+      padding: 10rem 8rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .pricing-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+      margin-bottom: 2px;
+    }
+    .ptab {
+      flex: 1;
+      min-width: 12rem;
+      padding: 1.4rem 2rem;
+      background: var(--cream);
+      border: none;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--medium-grey);
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+    .ptab:hover { background: var(--light-grey); color: var(--charcoal); }
+    .ptab.active { background: var(--dark-brown); color: var(--gold); }
+
+    .ptab-content {
+      display: none;
+      background: var(--cream);
+      padding: 4rem;
+    }
+    .ptab-content.active { display: block; }
+
+    .price-note {
+      margin-top: 2.4rem;
+      padding: 1.6rem 2rem;
+      background: var(--blush);
+      border-left: 2px solid var(--gold);
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: var(--medium-grey);
+      line-height: 1.7;
+    }
+
+    /* Price table */
+    .ptable {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .ptable thead tr th {
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-align: left;
+      padding: 0 0 1.6rem 0;
+      border-bottom: 1px solid var(--light-grey);
+    }
+    .ptable thead tr th:last-child { text-align: right; }
+    .ptable tbody tr { transition: background 0.15s; }
+    .ptable tbody tr:hover td { background: rgba(201,169,110,0.04); }
+    .ptable tbody td {
+      padding: 1.4rem 0;
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--charcoal);
+      border-bottom: 1px solid var(--light-grey);
+      vertical-align: middle;
+    }
+    .ptable tbody td:last-child {
+      text-align: right;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 400;
+      color: var(--dark-brown);
+      white-space: nowrap;
+    }
+    .ptable tbody td.sub {
+      font-size: 1.2rem;
+      color: var(--medium-grey);
+    }
+    .ptable .cat-row td {
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      padding-top: 2.4rem;
+      padding-bottom: 0.8rem;
+      border-bottom: none;
+      background: none !important;
+    }
+
+    /* ========================
+       WHY CHOOSE US
+    ======================== */
+    .why-section {
+      background: var(--blush);
+      padding: 10rem 8rem;
+    }
+    .why-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 8rem;
+      align-items: start;
+    }
+    .why-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.6rem;
+    }
+    .why-item {}
+    .why-bar {
+      width: 4rem;
+      height: 1px;
+      background: var(--gold);
+      margin-bottom: 1.6rem;
+    }
+    .why-item-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--dark-brown);
+      margin-bottom: 0.8rem;
+    }
+    .why-item-desc {
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: var(--medium-grey);
+      line-height: 1.75;
+    }
+
+    /* ========================
+       BOOKING / CONTACT
+    ======================== */
+    .contact-section {
+      padding: 10rem 8rem;
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8rem;
+      align-items: start;
+    }
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--light-grey);
+    }
+    .contact-info-item:last-child { border-bottom: none; }
+    .contact-icon {
+      width: 3.2rem;
+      height: 3.2rem;
+      border: 1px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.3rem;
+      color: var(--gold);
+    }
+    .contact-label {
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--medium-grey);
+      margin-bottom: 0.4rem;
+    }
+    .contact-value {
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--charcoal);
+      line-height: 1.6;
+    }
+    .contact-value a { color: var(--gold-dark); transition: color 0.2s; }
+    .contact-value a:hover { color: var(--gold); }
+
+    /* Form */
+    .booking-form {}
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }
+    .form-group { margin-bottom: 2rem; }
+    .form-group label {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--medium-grey);
+      margin-bottom: 0.8rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 1.4rem 1.6rem;
+      background: var(--cream);
+      border: 1px solid var(--light-grey);
+      font-family: 'Jost', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--charcoal);
+      outline: none;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--gold); }
+    .form-group textarea { resize: vertical; min-height: 10rem; }
+    .form-submit {
+      width: 100%;
+      padding: 1.6rem;
+      background: var(--dark-brown);
+      color: var(--cream);
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      border: 1px solid var(--dark-brown);
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    .form-submit:hover { background: var(--gold); border-color: var(--gold); color: var(--dark-brown); }
+
+    /* ========================
+       FOOTER
+    ======================== */
+    .site-footer {
+      background: var(--dark-brown);
+      padding: 8rem 8rem 4rem;
+    }
+    .footer-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.2fr;
+      gap: 6rem;
+      padding-bottom: 6rem;
+      border-bottom: 1px solid rgba(201,169,110,0.18);
+    }
+    .footer-brand-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--cream);
+      letter-spacing: 0.5px;
+      line-height: 1.2;
+      margin-bottom: 1.6rem;
+    }
+    .footer-tagline {
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+    }
+    .footer-desc {
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: rgba(249,245,240,0.45);
+      line-height: 1.8;
+      max-width: 26rem;
+    }
+    .footer-col-title {
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 1rem; }
+    .footer-links a {
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: rgba(249,245,240,0.45);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-contact-row {
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: rgba(249,245,240,0.45);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    .footer-contact-row a { transition: color 0.2s; }
+    .footer-contact-row a:hover { color: var(--gold); }
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 3.2rem;
+    }
+    .footer-copy {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: rgba(249,245,240,0.28);
+      letter-spacing: 0.5px;
+    }
+    .footer-social { display: flex; gap: 2rem; }
+    .footer-social a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(249,245,240,0.35);
+      transition: color 0.2s;
+    }
+    .footer-social a:hover { color: var(--gold); }
+
+    /* ========================
+       MOBILE / RESPONSIVE
+    ======================== */
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-content { padding: 7rem 4rem; order: 2; }
+      .hero-media { height: 60vw; order: 1; }
+      .hero-badge { bottom: 2.4rem; left: 2.4rem; }
+
+      .intro { grid-template-columns: 1fr; padding: 7rem 4rem; gap: 4rem; }
+      .intro-photo { height: 40rem; }
+
+      .categories-grid { grid-template-columns: 1fr 1fr; }
+
+      .why-inner { grid-template-columns: 1fr; gap: 4rem; }
+
+      .contact-section { grid-template-columns: 1fr; padding: 7rem 4rem; gap: 5rem; }
+
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 4rem; }
+    }
+
+    @media (max-width: 768px) {
+      html { font-size: 56.25%; }
+      .top-bar { padding: 0.8rem 2rem; }
+      .top-bar-right { display: none; }
+      .nav-inner { padding: 0 2rem; }
+      .nav-links {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: var(--dark-brown);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3.2rem;
+        z-index: 550;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { color: var(--cream) !important; font-size: 1.4rem; letter-spacing: 4px; }
+      .nav-links .nav-book { background: transparent !important; border-color: var(--gold) !important; color: var(--gold) !important; }
+      .nav-hamburger { display: flex; }
+
+      .hero-content { padding: 5rem 2.4rem; }
+      .hero-media { height: 70vw; }
+
+      .intro { padding: 6rem 2.4rem; }
+      .intro-photo { height: 32rem; }
+      .intro-photo-accent { display: none; }
+      .intro-stats { flex-wrap: wrap; gap: 2.4rem; }
+
+      .categories-section { padding: 6rem 2.4rem; }
+      .categories-grid { grid-template-columns: 1fr; }
+      .cat-card { height: 32rem; }
+
+      .cta-strip { padding: 7rem 2.4rem; }
+
+      .pricing-section { padding: 6rem 2.4rem; }
+      .pricing-tabs { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 2px; }
+      .ptab { min-width: 10rem; font-size: 0.9rem; padding: 1.2rem 1.4rem; flex-shrink: 0; }
+      .ptab-content { padding: 2.4rem 1.6rem; }
+
+      .why-section { padding: 6rem 2.4rem; }
+      .why-features { grid-template-columns: 1fr; }
+
+      .contact-section { padding: 6rem 2.4rem; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+
+      .site-footer { padding: 6rem 2.4rem 3.2rem; }
+      .footer-grid { grid-template-columns: 1fr; gap: 3.6rem; }
+      .footer-bottom { flex-direction: column; gap: 1.6rem; text-align: center; }
+
+      .cta-strip-actions { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========================
+     TOP INFO BAR
+======================== -->
+<div class="top-bar">
+  <div>
+    <a href="tel:+35395215XX">+353 95 215 XX</a>
+    <span class="top-bar-sep">|</span>
+    <a href="mailto:info@clifdenbeautylaserclinic.com">info@clifdenbeautylaserclinic.com</a>
+  </div>
+  <div class="top-bar-right">
+    <span style="color:rgba(201,169,110,0.5); font-size:1.1rem;">Clifden, Co. Galway</span>
+    <span class="top-bar-sep">|</span>
+    <span style="color:rgba(201,169,110,0.5); font-size:1.1rem;">Mon–Sat: 9am–6pm</span>
+  </div>
+</div>
+
+<!-- ========================
+     NAVIGATION
+======================== -->
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      Clifden Beauty &amp; Laser Clinic
+      <span>Clifden · Galway · Ireland</span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#treatments">Treatments</a></li>
+      <li><a href="#pricing">Prices</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#book" class="nav-book">Book Now</a></li>
+    </ul>
+
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation">
+      <span id="hb1"></span>
+      <span id="hb2"></span>
+      <span id="hb3"></span>
+    </button>
+  </div>
+</header>
+
+<!-- ========================
+     HERO
+======================== -->
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-eyebrow">Advanced Skin Solutions · Clifden, Galway</span>
+    <h1 class="hero-title">
+      Beauty That<br>
+      <em>Never Ages</em>
+    </h1>
+    <p class="hero-desc">
+      Transformative, bespoke skincare treatments tailored to your unique skin. Over 20 years of trusted expertise in the heart of Connemara.
+    </p>
+    <div class="hero-actions">
+      <a href="#book" class="btn-primary">Book Your Consultation</a>
+      <a href="#treatments" class="btn-text">Our Treatments</a>
+    </div>
+  </div>
+
+  <div class="hero-media">
+    <!-- Replace src with your actual hero image -->
+    <img
+      src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=80"
+      alt="Luxury skincare treatment at Clifden Beauty & Laser Clinic"
+      onerror="this.style.display='none'"
+    >
+    <div class="hero-media-overlay"></div>
+    <div class="hero-badge">
+      <div class="hero-badge-num">20+</div>
+      <div class="hero-badge-text">Years Experience</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     MARQUEE
+======================== -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-track">
+    <!-- duplicated for seamless loop -->
+    <span class="marquee-item">Laser Hair Removal</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">IPL Skin Treatments</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">Cosmetic Injectables</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">Advanced Facials</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">Radio Frequency</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">Waxing &amp; Threading</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">Clifden · Galway</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">Laser Hair Removal</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">IPL Skin Treatments</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">Cosmetic Injectables</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">Advanced Facials</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">Radio Frequency</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">Waxing &amp; Threading</span><span class="marquee-dot">·</span>
+    <span class="marquee-item">Clifden · Galway</span><span class="marquee-dot">·</span>
+  </div>
+</div>
+
+<!-- ========================
+     INTRO / ABOUT
+======================== -->
+<section class="intro" id="about">
+  <div>
+    <span class="section-label">Our Philosophy</span>
+    <h2 class="intro-title">Bespoke Treatments<br>Tailored To You</h2>
+    <p class="intro-body">
+      At Clifden Beauty &amp; Laser Clinic, we believe that no two skins are alike. Our philosophy is rooted in providing customised skincare treatments targeting different skin types and conditions. With bespoke beauty treatments, we ensure you leave our clinic with your best face forward — glowing, confident skin.
+    </p>
+    <div class="intro-stats">
+      <div>
+        <div class="stat-num">20+</div>
+        <div class="stat-label">Years Expertise</div>
+      </div>
+      <div>
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Happy Clients</div>
+      </div>
+      <div>
+        <div class="stat-num">FDA</div>
+        <div class="stat-label">CE Approved</div>
+      </div>
+    </div>
+    <a href="#book" class="btn-primary">Find Your Treatment</a>
+  </div>
+
+  <div class="intro-photo">
+    <div class="intro-photo-bg"></div>
+    <img
+      src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=800&q=80"
+      alt="Personalised beauty consultation"
+      onerror="this.style.display='none'"
+    >
+    <div class="intro-photo-accent"></div>
+  </div>
+</section>
+
+<!-- ========================
+     TREATMENT CATEGORIES
+======================== -->
+<section class="categories-section" id="treatments">
+  <div class="categories-inner">
+    <div class="section-header">
+      <span class="section-label">What We Offer</span>
+      <h2 class="section-title">Our Treatment Categories</h2>
+    </div>
+
+    <div class="categories-grid">
+
+      <!-- Laser Hair Removal -->
+      <div class="cat-card">
+        <div class="cat-card-bg" style="background: linear-gradient(160deg, #1A0A05 0%, #3D2B1F 60%, #5A3525 100%);"></div>
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-body">
+          <p class="cat-card-tag">Advanced Technology</p>
+          <h3 class="cat-card-title">Laser Hair<br>Removal</h3>
+          <p class="cat-card-from">From €45 per session</p>
+          <a href="#pricing" class="cat-card-link" onclick="openTab('laser')">View Prices →</a>
+        </div>
+      </div>
+
+      <!-- IPL Treatments -->
+      <div class="cat-card">
+        <div class="cat-card-bg" style="background: linear-gradient(160deg, #3D2010 0%, #8A5535 60%, #C9A96E 100%);"></div>
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-body">
+          <p class="cat-card-tag">Skin Clarity</p>
+          <h3 class="cat-card-title">IPL Skin<br>Treatments</h3>
+          <p class="cat-card-from">From €50 per session</p>
+          <a href="#pricing" class="cat-card-link" onclick="openTab('ipl')">View Prices →</a>
+        </div>
+      </div>
+
+      <!-- Facials & Skin -->
+      <div class="cat-card">
+        <div class="cat-card-bg" style="background: linear-gradient(160deg, #2C1A10 0%, #7A5030 60%, #A07840 100%);"></div>
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-body">
+          <p class="cat-card-tag">Skin Rejuvenation</p>
+          <h3 class="cat-card-title">Facials &amp;<br>Skin Treatments</h3>
+          <p class="cat-card-from">From €35 per session</p>
+          <a href="#pricing" class="cat-card-link" onclick="openTab('skin')">View Prices →</a>
+        </div>
+      </div>
+
+      <!-- Injectables -->
+      <div class="cat-card">
+        <div class="cat-card-bg" style="background: linear-gradient(160deg, #0E0608 0%, #2C1820 60%, #4A2830 100%);"></div>
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-body">
+          <p class="cat-card-tag">Anti-Ageing</p>
+          <h3 class="cat-card-title">Cosmetic<br>Injectables</h3>
+          <p class="cat-card-from">From €35 per treatment</p>
+          <a href="#pricing" class="cat-card-link" onclick="openTab('injectables')">View Prices →</a>
+        </div>
+      </div>
+
+      <!-- Radio Frequency -->
+      <div class="cat-card">
+        <div class="cat-card-bg" style="background: linear-gradient(160deg, #1A1005 0%, #4A3015 60%, #8A6020 100%);"></div>
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-body">
+          <p class="cat-card-tag">Skin Tightening</p>
+          <h3 class="cat-card-title">Radio<br>Frequency</h3>
+          <p class="cat-card-from">From €65 per session</p>
+          <a href="#pricing" class="cat-card-link" onclick="openTab('rf')">View Prices →</a>
+        </div>
+      </div>
+
+      <!-- General Beauty -->
+      <div class="cat-card">
+        <div class="cat-card-bg" style="background: linear-gradient(160deg, #200C08 0%, #5A2820 60%, #9A5A48 100%);"></div>
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-body">
+          <p class="cat-card-tag">Classic Treatments</p>
+          <h3 class="cat-card-title">General Beauty<br>&amp; Waxing</h3>
+          <p class="cat-card-from">From €10 per treatment</p>
+          <a href="#pricing" class="cat-card-link" onclick="openTab('beauty')">View Prices →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     CTA STRIP
+======================== -->
+<section class="cta-strip">
+  <div class="cta-strip-inner">
+    <span class="cta-strip-label">Begin Your Journey</span>
+    <h2 class="cta-strip-title">
+      Ready to Achieve<br>
+      <em>Your Best Skin?</em>
+    </h2>
+    <p class="cta-strip-desc">
+      Over 20 years of professional experience — ensuring you feel right at home while achieving glowing, confident skin.
+    </p>
+    <div class="cta-strip-actions">
+      <a href="#book" class="btn-gold">Book Your Consultation</a>
+      <a href="#pricing" class="btn-outline">View All Prices</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     PRICING
+======================== -->
+<section class="pricing-section" id="pricing">
+  <div class="section-header">
+    <span class="section-label">Transparent Pricing</span>
+    <h2 class="section-title">Our Treatment Prices</h2>
+  </div>
+
+  <!-- TAB BUTTONS -->
+  <div class="pricing-tabs">
+    <button class="ptab active" id="btn-skin"        onclick="openTab('skin')">Skin Treatments</button>
+    <button class="ptab"        id="btn-ipl"         onclick="openTab('ipl')">IPL Treatments</button>
+    <button class="ptab"        id="btn-injectables" onclick="openTab('injectables')">Injectables</button>
+    <button class="ptab"        id="btn-laser"       onclick="openTab('laser')">Laser Hair Removal</button>
+    <button class="ptab"        id="btn-rf"          onclick="openTab('rf')">Radio Frequency</button>
+    <button class="ptab"        id="btn-beauty"      onclick="openTab('beauty')">General Beauty</button>
+  </div>
+
+  <!-- SKIN TREATMENTS TAB -->
+  <div class="ptab-content active" id="tab-skin">
+    <table class="ptable">
+      <thead><tr><th>Treatment</th><th>Price</th></tr></thead>
+      <tbody>
+        <tr class="cat-row"><td colspan="2">Advanced Facial Treatments</td></tr>
+        <tr><td>Micro-needling Face + Neck</td><td>€150</td></tr>
+        <tr><td>Micro-needling Face + Neck + LED Mask</td><td>€150</td></tr>
+        <tr><td>PDRN Micro-needling</td><td>€200</td></tr>
+        <tr><td>Lumi Facial</td><td>€200</td></tr>
+        <tr><td>Hydra-Facial</td><td>€80</td></tr>
+        <tr class="cat-row"><td colspan="2">Bespoke Facials</td></tr>
+        <tr><td>Bespoke Facial</td><td>€60</td></tr>
+        <tr><td>Bespoke Express Facial</td><td>€35</td></tr>
+        <tr><td>High-Frequency Facial Treatment</td><td>€65</td></tr>
+        <tr><td>High-Frequency Facial + LED Light</td><td>€75</td></tr>
+        <tr class="cat-row"><td colspan="2">Peels &amp; Light Therapy</td></tr>
+        <tr><td>Lactic Peel</td><td>€75</td></tr>
+        <tr><td>Glycolic Plus Peel</td><td>€65</td></tr>
+        <tr><td>LED Therapy Face or Body</td><td>€30</td></tr>
+        <tr><td>LED Therapy Face (Add-On)</td><td>€20</td></tr>
+      </tbody>
+    </table>
+    <p class="price-note">ℹ Package Deal available: Buy 2, Get 3rd Half Price (~€162.50 saving on triple booking).</p>
+  </div>
+
+  <!-- IPL TREATMENTS TAB -->
+  <div class="ptab-content" id="tab-ipl">
+    <table class="ptable">
+      <thead><tr><th>Treatment</th><th>Area</th><th>Price</th></tr></thead>
+      <tbody>
+        <tr class="cat-row"><td colspan="3">Pigmentation Removal</td></tr>
+        <tr><td>IPL Pigmentation Full Face</td><td class="sub">Full Face</td><td>€150</td></tr>
+        <tr><td>IPL Pigmentation Cheeks + Nose + Chin</td><td class="sub">Half Face</td><td>€128</td></tr>
+        <tr><td>IPL Cheeks &amp; Nose Pigment Removal</td><td class="sub">Cheeks &amp; Nose</td><td>€115</td></tr>
+        <tr><td>IPL Cheeks Pigment Removal</td><td class="sub">Cheeks</td><td>€90</td></tr>
+        <tr><td>IPL Hands Pigment Removal</td><td class="sub">Hands</td><td>€75</td></tr>
+        <tr><td>IPL Neck &amp; Décolleté Pigment Removal</td><td class="sub">Neck</td><td>€150</td></tr>
+        <tr><td>IPL Single Lesion (Pigment or Facial Vein)</td><td class="sub">Single Area</td><td>€50</td></tr>
+        <tr class="cat-row"><td colspan="3">Rosacea &amp; Thread Veins</td></tr>
+        <tr><td>IPL Rosacea/Thread Vein (Cheeks only)</td><td class="sub">Cheeks</td><td>€80</td></tr>
+        <tr><td>IPL Rosacea/Thread Vein (Cheeks + Nose)</td><td class="sub">Cheeks &amp; Nose</td><td>€118</td></tr>
+        <tr><td>IPL Rosacea Half Face</td><td class="sub">Half Face</td><td>€128</td></tr>
+        <tr class="cat-row"><td colspan="3">Acne Treatment</td></tr>
+        <tr><td>IPL Acne Upperlip + Chin</td><td class="sub">Small Area</td><td>€80</td></tr>
+        <tr><td>IPL Acne Half Face</td><td class="sub">Half Face</td><td>€90</td></tr>
+        <tr><td>IPL Acne Full Face &amp; Neck</td><td class="sub">Full Face</td><td>€120</td></tr>
+        <tr><td>IPL Acne Full Back</td><td class="sub">Full Back</td><td>€200</td></tr>
+        <tr><td>IPL Acne Chest</td><td class="sub">Chest</td><td>€120</td></tr>
+      </tbody>
+    </table>
+    <p class="price-note">ℹ IPL Consultation &amp; Patch Test: €25 (required prior to first session, redeemable against treatment).</p>
+  </div>
+
+  <!-- INJECTABLES TAB -->
+  <div class="ptab-content" id="tab-injectables">
+    <table class="ptable">
+      <thead><tr><th>Treatment</th><th>Category</th><th>Price</th></tr></thead>
+      <tbody>
+        <tr class="cat-row"><td colspan="3">Anti-Ageing</td></tr>
+        <tr><td>Anti-Wrinkle Botox – 3 Areas</td><td class="sub">Anti-Ageing</td><td>€300</td></tr>
+        <tr><td>Anti-Wrinkle Botox – 2 Areas</td><td class="sub">Anti-Ageing</td><td>€250</td></tr>
+        <tr class="cat-row"><td colspan="3">Skin Boosters &amp; Polynucleotides</td></tr>
+        <tr><td>Profhilo</td><td class="sub">Skin Booster</td><td>€250</td></tr>
+        <tr><td>Jalupro Super Hydration</td><td class="sub">Skin Booster</td><td>€200</td></tr>
+        <tr><td>Vampire Facial (PRP)</td><td class="sub">Skin Booster</td><td>€295</td></tr>
+        <tr><td>Nucleofill Face (Medium or Strong)</td><td class="sub">Polynucleotides</td><td>€260</td></tr>
+        <tr><td>Nucleofill Neck (Medium or Strong)</td><td class="sub">Polynucleotides</td><td>€260</td></tr>
+        <tr><td>Nucleofill Eyes (Soft)</td><td class="sub">Polynucleotides</td><td>€250</td></tr>
+        <tr><td>Meso-Booster</td><td class="sub">Skin Booster</td><td>€150</td></tr>
+        <tr class="cat-row"><td colspan="3">Fat Dissolving</td></tr>
+        <tr><td>Lemon Bottle Full Abdomen &amp; Love Handles</td><td class="sub">Fat Dissolving</td><td>€550</td></tr>
+        <tr><td>Lemon Bottle Lower Abdomen</td><td class="sub">Fat Dissolving</td><td>€250</td></tr>
+        <tr><td>Lemon Bottle Upper Abdomen</td><td class="sub">Fat Dissolving</td><td>€200</td></tr>
+        <tr><td>Lemon Bottle Love Handles</td><td class="sub">Fat Dissolving</td><td>€200</td></tr>
+        <tr><td>Lemon Bottle Bra Bulge</td><td class="sub">Fat Dissolving</td><td>€200</td></tr>
+        <tr><td>Lemon Bottle Double Chin</td><td class="sub">Fat Dissolving</td><td>€180</td></tr>
+        <tr class="cat-row"><td colspan="3">Wellness Vitamin Injections</td></tr>
+        <tr><td>Vitamin B12 Injection</td><td class="sub">Wellness</td><td>€45</td></tr>
+        <tr><td>Vitamin B Complex Injection</td><td class="sub">Wellness</td><td>€40</td></tr>
+        <tr><td>Vitamin D Injection (IM)</td><td class="sub">Wellness</td><td>€35</td></tr>
+        <tr><td>Vitamin C Injection (IM)</td><td class="sub">Wellness</td><td>€35</td></tr>
+      </tbody>
+    </table>
+    <p class="price-note">ℹ Injectable treatments consultation with RGN Jonathan: €25. Required for all first-time injectable clients.</p>
+  </div>
+
+  <!-- LASER HAIR REMOVAL TAB -->
+  <div class="ptab-content" id="tab-laser">
+    <table class="ptable">
+      <thead><tr><th>Treatment Area</th><th>Size</th><th>Price</th></tr></thead>
+      <tbody>
+        <tr class="cat-row"><td colspan="3">Small Areas</td></tr>
+        <tr><td>Upper Lip</td><td class="sub">Small</td><td>€45</td></tr>
+        <tr><td>Chin</td><td class="sub">Small</td><td>€45</td></tr>
+        <tr><td>Sideburns</td><td class="sub">Small</td><td>€45</td></tr>
+        <tr class="cat-row"><td colspan="3">Medium Areas</td></tr>
+        <tr><td>Bikini</td><td class="sub">Medium</td><td>€60</td></tr>
+        <tr><td>Beardline</td><td class="sub">Medium</td><td>€60</td></tr>
+        <tr><td>Stomach Line</td><td class="sub">Medium</td><td>€60</td></tr>
+        <tr><td>Underarm</td><td class="sub">Medium</td><td>€65</td></tr>
+        <tr><td>Buttock</td><td class="sub">Medium</td><td>€60</td></tr>
+        <tr class="cat-row"><td colspan="3">Large Areas</td></tr>
+        <tr><td>Half Arm</td><td class="sub">Large</td><td>€95</td></tr>
+        <tr><td>Half Leg</td><td class="sub">Large</td><td>€95</td></tr>
+        <tr><td>Brazilian</td><td class="sub">Large</td><td>€95</td></tr>
+        <tr><td>Hollywood</td><td class="sub">Large</td><td>€95</td></tr>
+        <tr><td>Chest</td><td class="sub">Large</td><td>€95</td></tr>
+        <tr><td>Shoulders</td><td class="sub">Large</td><td>€95</td></tr>
+        <tr><td>Full Stomach</td><td class="sub">Large</td><td>€95</td></tr>
+        <tr><td>Full Arms &amp; Hands</td><td class="sub">Large</td><td>€95</td></tr>
+        <tr class="cat-row"><td colspan="3">Extra Large Areas</td></tr>
+        <tr><td>Full Legs</td><td class="sub">Extra Large</td><td>€190</td></tr>
+        <tr><td>Full Back</td><td class="sub">Extra Large</td><td>€190</td></tr>
+      </tbody>
+    </table>
+    <p class="price-note">ℹ Prices are per session. Multiple sessions are typically required for permanent results. Package pricing available on request.</p>
+  </div>
+
+  <!-- RADIO FREQUENCY TAB -->
+  <div class="ptab-content" id="tab-rf">
+    <table class="ptable">
+      <thead><tr><th>Treatment</th><th>Price</th></tr></thead>
+      <tbody>
+        <tr><td>RF Face &amp; Neck</td><td>€80</td></tr>
+        <tr><td>RF Body Abdomen</td><td>€90</td></tr>
+        <tr><td>RF Bra Bulge</td><td>€65</td></tr>
+        <tr><td>Hydro Facial + Mini RF</td><td>€95</td></tr>
+      </tbody>
+    </table>
+    <p class="price-note">ℹ RF treatments promote collagen production and natural skin tightening. A course of 4–6 sessions is recommended for optimal results.</p>
+  </div>
+
+  <!-- GENERAL BEAUTY TAB -->
+  <div class="ptab-content" id="tab-beauty">
+    <table class="ptable">
+      <thead><tr><th>Treatment</th><th>Category</th><th>Price</th></tr></thead>
+      <tbody>
+        <tr class="cat-row"><td colspan="3">Eyes &amp; Brows</td></tr>
+        <tr><td>Eyebrow Waxing</td><td class="sub">Eyes &amp; Brows</td><td>€12</td></tr>
+        <tr><td>Eyebrow Tinting</td><td class="sub">Eyes &amp; Brows</td><td>€12</td></tr>
+        <tr><td>Eyebrow Shape &amp; Tint</td><td class="sub">Eyes &amp; Brows</td><td>€20</td></tr>
+        <tr><td>Eyelash Tinting</td><td class="sub">Eyes &amp; Brows</td><td>€12</td></tr>
+        <tr><td>Eye Trio (Wax, Tint &amp; Lash Tint)</td><td class="sub">Eyes &amp; Brows</td><td>€30</td></tr>
+        <tr><td>Lash Lift</td><td class="sub">Eyes &amp; Brows</td><td>€60</td></tr>
+        <tr class="cat-row"><td colspan="3">Threading</td></tr>
+        <tr><td>Eyebrow Threading</td><td class="sub">Threading</td><td>€12</td></tr>
+        <tr><td>Threading Eyebrow Shape &amp; Tint</td><td class="sub">Threading</td><td>€20</td></tr>
+        <tr><td>Threading Upperlip &amp; Chin</td><td class="sub">Threading</td><td>€15</td></tr>
+        <tr><td>Threading Lip or Chin</td><td class="sub">Threading</td><td>€10</td></tr>
+        <tr class="cat-row"><td colspan="3">Female Waxing</td></tr>
+        <tr><td>Full Leg &amp; Hollywood</td><td class="sub">Waxing</td><td>€90</td></tr>
+        <tr><td>Half Leg &amp; Hollywood Wax</td><td class="sub">Waxing</td><td>€75</td></tr>
+        <tr><td>Full Leg &amp; Bikini (Standard)</td><td class="sub">Waxing</td><td>€60</td></tr>
+        <tr><td>Half Leg &amp; Brazilian Wax</td><td class="sub">Waxing</td><td>€55</td></tr>
+        <tr><td>Full Leg Wax</td><td class="sub">Waxing</td><td>€45</td></tr>
+        <tr><td>Upper or Lower Leg Wax</td><td class="sub">Waxing</td><td>€30</td></tr>
+        <tr><td>Hollywood Wax</td><td class="sub">Waxing</td><td>€50</td></tr>
+        <tr><td>Brazilian Wax</td><td class="sub">Waxing</td><td>€30</td></tr>
+        <tr><td>Californian Wax</td><td class="sub">Waxing</td><td>€26</td></tr>
+        <tr><td>Bikini Wax (Standard)</td><td class="sub">Waxing</td><td>€30</td></tr>
+        <tr><td>Full Arm Wax</td><td class="sub">Waxing</td><td>€30</td></tr>
+        <tr><td>Half Arm Wax</td><td class="sub">Waxing</td><td>€18</td></tr>
+        <tr><td>Underarm Waxing</td><td class="sub">Waxing</td><td>€15</td></tr>
+        <tr><td>Half Face Wax (Cheeks + Upperlip + Chin)</td><td class="sub">Waxing</td><td>€18</td></tr>
+        <tr><td>Upperlip &amp; Chin Wax</td><td class="sub">Waxing</td><td>€15</td></tr>
+        <tr><td>Upperlip Wax</td><td class="sub">Waxing</td><td>€10</td></tr>
+        <tr><td>Chin Wax</td><td class="sub">Waxing</td><td>€10</td></tr>
+        <tr><td>Nose Wax</td><td class="sub">Waxing</td><td>€15</td></tr>
+        <tr><td>Side of Face Wax</td><td class="sub">Waxing</td><td>€15</td></tr>
+        <tr class="cat-row"><td colspan="3">Male Waxing</td></tr>
+        <tr><td>Male Back Wax</td><td class="sub">Male Waxing</td><td>€65</td></tr>
+        <tr><td>Male Chest &amp; Stomach Wax</td><td class="sub">Male Waxing</td><td>€80</td></tr>
+      </tbody>
+    </table>
+    <p class="price-note">ℹ Threading and waxing available for both face and body. Please arrive with clean, product-free skin.</p>
+  </div>
+
+</section>
+
+<!-- ========================
+     WHY CHOOSE US
+======================== -->
+<section class="why-section">
+  <div class="why-inner">
+    <div>
+      <span class="section-label">Why Clifden</span>
+      <h2 class="section-title" style="margin-bottom: 2rem;">Your Skin Deserves<br>the Best</h2>
+      <p style="font-size:1.4rem; color:var(--medium-grey); font-weight:300; line-height:1.85;">We combine clinical expertise with a warm, personal approach — treating every client as an individual with unique skin and unique goals.</p>
+    </div>
+    <div class="why-features">
+      <div class="why-item">
+        <div class="why-bar"></div>
+        <h3 class="why-item-title">20+ Years Experience</h3>
+        <p class="why-item-desc">Over two decades of professional expertise in advanced skin solutions and beauty treatments in Clifden.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-bar"></div>
+        <h3 class="why-item-title">FDA &amp; CE Approved</h3>
+        <p class="why-item-desc">All laser and IPL equipment is fully FDA and CE certified, ensuring your safety and the highest clinical standards.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-bar"></div>
+        <h3 class="why-item-title">Bespoke Treatments</h3>
+        <p class="why-item-desc">Every treatment plan is personalised to your unique skin type, tone, and individual beauty goals. No two plans alike.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-bar"></div>
+        <h3 class="why-item-title">Heart of Connemara</h3>
+        <p class="why-item-desc">A beloved local clinic in Clifden, Co. Galway — where community warmth and clinical expertise go hand in hand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     CONTACT / BOOKING
+======================== -->
+<section class="contact-section" id="book">
+  <!-- Info side -->
+  <div id="contact">
+    <span class="section-label">Get In Touch</span>
+    <h2 class="section-title" style="margin-bottom: 2.4rem;">Book Your<br>Consultation</h2>
+    <p style="font-size:1.4rem; color:var(--medium-grey); font-weight:300; line-height:1.85; margin-bottom:4rem;">
+      Ready to begin your skin journey? Book a consultation and let us create a personalised treatment plan just for you.
+    </p>
+
+    <div class="contact-info-item">
+      <div class="contact-icon">📍</div>
+      <div>
+        <p class="contact-label">Location</p>
+        <p class="contact-value">Clifden, Co. Galway, Ireland</p>
+      </div>
+    </div>
+    <div class="contact-info-item">
+      <div class="contact-icon">📞</div>
+      <div>
+        <p class="contact-label">Phone</p>
+        <p class="contact-value"><a href="tel:+35395215XX">+353 95 215 XX</a></p>
+      </div>
+    </div>
+    <div class="contact-info-item">
+      <div class="contact-icon">✉</div>
+      <div>
+        <p class="contact-label">Email</p>
+        <p class="contact-value"><a href="mailto:info@clifdenbeautylaserclinic.com">info@clifdenbeautylaserclinic.com</a></p>
+      </div>
+    </div>
+    <div class="contact-info-item">
+      <div class="contact-icon">🕐</div>
+      <div>
+        <p class="contact-label">Opening Hours</p>
+        <p class="contact-value">Mon–Fri: 9:00am – 6:00pm<br>Saturday: 9:00am – 4:00pm</p>
+      </div>
+    </div>
+    <div class="contact-info-item">
+      <div class="contact-icon">💬</div>
+      <div>
+        <p class="contact-label">Consultations</p>
+        <p class="contact-value">Injectable &amp; IPL consultations: €25<br>(Redeemable against treatment cost)</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Form side -->
+  <div class="booking-form">
+    <form onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="fname" placeholder="Your first name" required>
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lname" placeholder="Your last name">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="+353 ...">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="treatment">Treatment of Interest</label>
+        <select id="treatment" name="treatment">
+          <option value="">Select a treatment category…</option>
+          <option>Laser Hair Removal</option>
+          <option>IPL Skin Treatments</option>
+          <option>Facials &amp; Skin Treatments</option>
+          <option>Cosmetic Injectables</option>
+          <option>Radio Frequency</option>
+          <option>General Beauty &amp; Waxing</option>
+          <option>Not sure – I'd like advice</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Message (Optional)</label>
+        <textarea id="message" name="message" placeholder="Tell us about your skin concerns or any questions you have…"></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Enquiry</button>
+    </form>
+  </div>
+</section>
+
+<!-- ========================
+     FOOTER
+======================== -->
+<footer class="site-footer">
+  <div class="footer-grid">
+
+    <div>
+      <p class="footer-brand-logo">Clifden Beauty<br>&amp; Laser Clinic</p>
+      <p class="footer-tagline">Beauty That Never Ages</p>
+      <p class="footer-desc">Advanced skin solutions and bespoke beauty treatments in the heart of Clifden, Co. Galway — where expertise meets warmth.</p>
+    </div>
+
+    <div>
+      <p class="footer-col-title">Treatments</p>
+      <ul class="footer-links">
+        <li><a href="#pricing" onclick="openTab('laser')">Laser Hair Removal</a></li>
+        <li><a href="#pricing" onclick="openTab('ipl')">IPL Skin Treatments</a></li>
+        <li><a href="#pricing" onclick="openTab('skin')">Facials &amp; Skin</a></li>
+        <li><a href="#pricing" onclick="openTab('injectables')">Cosmetic Injectables</a></li>
+        <li><a href="#pricing" onclick="openTab('rf')">Radio Frequency</a></li>
+        <li><a href="#pricing" onclick="openTab('beauty')">General Beauty</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="footer-col-title">Information</p>
+      <ul class="footer-links">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#pricing">All Prices</a></li>
+        <li><a href="#book">Book Consultation</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">clifdenbeautylaserclinic.com</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="footer-col-title">Contact</p>
+      <p class="footer-contact-row">Clifden, Co. Galway,<br>Ireland</p>
+      <p class="footer-contact-row"><a href="tel:+35395215XX">+353 95 215 XX</a></p>
+      <p class="footer-contact-row"><a href="mailto:info@clifdenbeautylaserclinic.com">info@clifdenbeautylaserclinic.com</a></p>
+      <p class="footer-contact-row" style="margin-top:1.6rem;">Mon–Fri: 9am – 6pm<br>Sat: 9am – 4pm</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2025 Clifden Beauty &amp; Laser Clinic. All rights reserved.</p>
+    <div class="footer-social">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ========================
+     JAVASCRIPT
+======================== -->
+<script>
+  /* ---- Pricing Tabs ---- */
+  function openTab(tab) {
+    // Deactivate all
+    document.querySelectorAll('.ptab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.ptab').forEach(el => el.classList.remove('active'));
+    // Activate target
+    var content = document.getElementById('tab-' + tab);
+    var btn     = document.getElementById('btn-' + tab);
+    if (content) content.classList.add('active');
+    if (btn)     btn.classList.add('active');
+  }
+
+  /* ---- Mobile Nav ---- */
+  var hamburger = document.getElementById('navHamburger');
+  var navLinks  = document.getElementById('navLinks');
+  var hb1 = document.getElementById('hb1');
+  var hb2 = document.getElementById('hb2');
+  var hb3 = document.getElementById('hb3');
+  var open = false;
+
+  hamburger.addEventListener('click', function() {
+    open = !open;
+    navLinks.classList.toggle('open', open);
+    hb1.style.transform = open ? 'rotate(45deg) translate(4px, 4px)'  : '';
+    hb2.style.opacity   = open ? '0' : '';
+    hb3.style.transform = open ? 'rotate(-45deg) translate(4px, -4px)' : '';
+  });
+
+  navLinks.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      open = false;
+      navLinks.classList.remove('open');
+      hb1.style.transform = '';
+      hb2.style.opacity   = '';
+      hb3.style.transform = '';
+    });
+  });
+
+  /* ---- Form ---- */
+  function handleSubmit(e) {
+    e.preventDefault();
+    var btn = e.target.querySelector('.form-submit');
+    btn.textContent = 'Message Sent ✓';
+    btn.style.background = 'var(--gold)';
+    btn.style.borderColor = 'var(--gold)';
+    btn.style.color = 'var(--dark-brown)';
+    btn.disabled = true;
+  }
+</script>
+
+</body>
+</html>
