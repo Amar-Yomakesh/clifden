@@ -18,3 +18,11 @@ Thumbs.db
 # Environment / secrets
 .env
 .env.*
+.env.local
+
+# Next.js build output
+.next/
+out/
+
+# TypeScript incremental build cache
+tsconfig.tsbuildinfo

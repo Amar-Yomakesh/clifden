@@ -1,0 +1,76 @@
+{
+	"Services" : {
+		"featured" : [
+			{ 
+				"name" : "Eyebrow Shape & Tint",
+				"price" : "€20",
+				"patchTestRequired" : true,
+				"description" : null,
+				"duration": "20mins"
+			},
+			{ 
+				"name" : "Upperlip & Chin wax",
+				"price" : "€15",
+				"patchTestRequired" : false,
+				"description" : "A combination of Upper lip & Chin Wax or Threading. The client will have a option of hot wax or strip wax for their hair removal.",
+				"duration": "15mins"
+			},
+			{ 
+				"name" : "Eye Trio",
+				"price" : "€30",
+				"patchTestRequired" : true,
+				"description" : "Eyebrow shape, Eyebrow Tint, Eyelash Tint",
+				"duration": "30mins"
+			},
+			{ 
+				"name" : "LED Therapy Face ADD ON",
+				"price" : "€20",
+				"patchTestRequired" : false,
+				"description" : "An add on service to almost any facials. Please enquire with our Aesthetic therapists. The treatment stands for Light Emitting Diode. It is very safe to use for any skin type. I love using LED mask after microneedling, hydrofacial and just on its own. •Led Red light helps to stimulate collagen •Blue light helps reduce breakouts such as acne. •Green light improves pigmentation •Yellow light helps reduce redness. We have serveral colours that can help & assist your skin conditions. Please avoid the following before treatment: Stop using retinoids & retinol for 2 weeks before treatment. Exfoliating scrubs Avoid sun exposure Antibiotics Botox and fillers within 2 weeks of treatment Astringents and toners Heavy makeup",
+				"duration": "10mins"
+			},
+			{ 
+				"name" : "Threading Eyebrow Shape & Tint",
+				"price" : "€20",
+				"patchTestRequired" : false,
+				"description" : "Please avoid the following before treatment: Stop using retinoids & retinol for 2 weeks before treatment. Exfoliating scrubs Avoid sun exposure Antibiotics Astringents and toners Heavy makeup",
+				"duration": "20mins"
+			}],
+			"IPL Laser Hair Removal Combination Packages" : [
+			{ 
+				"name" : "Full Leg,Underarm & Bikini",
+				"price" : "€280",
+				"patchTestRequired" : false,
+				"description" : "Experience smooth and silky skin with our Full Leg, Underarm & Bikini IPL hair removal service. This convenient package targets multiple areas, providing a long-lasting solution to unwanted hair, so you can enjoy effortless confidence all year round.",
+				"duration": "2hours"
+			},
+			{ 
+				"name" : "Back,Chest & Abdomen",
+				"price" : "€340",
+				"patchTestRequired" : false,
+				"description" : "Experience smooth, hair-free skin across multiple areas with our Back, Chest & Abdomen service. This gentle treatment targets unwanted hair, helping you feel confident and comfortable in your skin. Enjoy a relaxing session in a welcoming environment, where your satisfaction is our priority.",
+				"duration": "2hours"
+			},
+			{ 
+				"name" : "Half Leg & Bikini",
+				"price" : "€340",
+				"patchTestRequired" : false,
+				"description" : "Experience smooth, hair-free skin with our Half Leg & Bikini IPL hair removal service. This gentle and effective treatment targets unwanted hair in these areas, offering a long-lasting solution for a polished look. Enjoy the confidence of silky skin with results you can trust.",
+				"duration": "1hour"
+			},{ 
+				"name" : "Mid Brow, Full Beard, Back of Neck",
+				"price" : "€120",
+				"patchTestRequired" : false,
+				"description" : "Elevate your grooming routine with our effective hair removal service, designed to focus on your eyebrows, full beard, and the back of your neck. This tailored treatment not only ensures smooth and well-defined features but also provides the convenience of long-lasting results. Experience a polished look that enhances your overall appearance and boosts your confidence.",
+				"duration": "30mins"
+			},
+			{ 
+				"name" : "IPL Lip & Chin",
+				"price" : "€70",
+				"patchTestRequired" : false,
+				"description" : "Achieve flawlessly smooth skin and say goodbye to unwanted hair with our IPL Lip & Chin treatment. This advanced service gently targets hair follicles to provide lasting results, leaving your skin feeling refreshed and defined. Our safe and effective IPL technology ensures a comfortable experience tailored to your unique needs. Enjoy the confidence that comes with beautifully refined features. Take advantage of our package deal—regularly 45e per session, but save 20e with our special offer. Embrace effortless beauty today!",
+				"duration": "20mins"
+			}]
+			
+	}
+}
